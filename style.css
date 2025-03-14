@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 12px;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+  gap: 12px;
+
+  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 12px;
+}
+
+.book-card {
+  flex: 1;
+
+
+  min-width: 300px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+}
+
+.book-card h2 {
+  font-weight: 500;
+  color: #242424;
+}
+
+.book-card p {
+  font-weight: 400;
+  color: #585858;
+}
+
+.book-card button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.new-button {
+  height: fit-content;
+  color: black;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 120px;
+  font-size: .9rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+#bookDialog {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+#bookDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#bookForm label {
+  font-weight: bold;
+}
+
+#bookForm input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#bookForm button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#bookForm button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#bookForm button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
