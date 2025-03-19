@@ -1,7 +1,24 @@
-// Deepseek refactored code to OOP
+// class Book {
+//     constructor(title, author, pages, read) {
+//         this.title = title;
+//         this.author = author;
+//         this.pages = pages;
+//         this.read = read;
+//         this.id = crypto.randomUUID();
+//     }
 
-class Book {
-    constructor(title, author, pages, read) {
+//     showBookInfo() {
+//         return `<h2>${this.title}</h2><p>${this.author}</p> <p>${this.pages} pages</p> 
+//                 <p>${this.read ? 'read' : 'not read yet'}</p>`;
+//     }
+
+//     changeReadStatus() {
+//         this.read = !this.read;
+//     }
+// }
+
+const makeBook = (() => {
+    function Book(title, author, pages, read) {
         this.title = title;
         this.author = author;
         this.pages = pages;
@@ -9,21 +26,23 @@ class Book {
         this.id = crypto.randomUUID();
     }
 
-    showBookInfo() {
+    Book.prototype.showBookInfo = function() {
         return `<h2>${this.title}</h2><p>${this.author}</p> <p>${this.pages} pages</p> 
                 <p>${this.read ? 'read' : 'not read yet'}</p>`;
     }
 
-    changeReadStatus() {
+    Book.prototype.changeReadStatus = function() {
         this.read = !this.read;
     }
-}
+
+    return { Book };
+} )();
 
 const Library = (() => {
     let books = [];
 
     const addBook = function(title, author, pages, read) {
-        const book = new Book(title, author, pages, read);
+        const book = new makeBook.Book(title, author, pages, read);
         books.push(book);
         displayBooks();
     }
