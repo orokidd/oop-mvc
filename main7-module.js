@@ -35,7 +35,7 @@ const makeBook = (() => {
         this.read = !this.read;
     }
 
-    return { Book };
+    return { Book }; // return an object with Book function 
 } )();
 
 const Library = (() => {
